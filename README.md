@@ -1,34 +1,26 @@
-`truffle migrate`で失敗。ganacheいる？
-
-# Etherplate
-
-![etherplate red block logo](https://raw.githubusercontent.com/chuckbergeron/etherplate/master/app/images/logos/etherplate-logo--red--lg.png)
+# Ethereum-tart
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 ### What is this?
 
-This is an example project showing how you can hook up your Ethereum Non-Fungible Tokens (NFTs, ERC721, similar to CryptoKitties) contract in a DApp. It demos web3 events, and is highly opinionated in that it uses Redux, React, React Router, and Bulma. You can rip out of any these or replace them with your favourites (ie. Skeleton.css instead of Bulma, etc.).
+This is an boilerpate project showing how you can hook up your Ethereum Non-Fungible Tokens (NFTs, ERC721, similar to CryptoKitties) contract in a DApp.
 
 Etherplate uses OpenZeppelin's fantastic community-audited contracts as a base to implement the ERC721 standard.
 
-### View Demo
-
-[View Demo on Netlify (Uses Ropsten testnet)](http://etherplate.netlify.com/)
-
-![Etherplate Demo Gif](https://raw.githubusercontent.com/chuckbergeron/etherplate/master/app/images/etherplate-demo.gif)
+This is forked from [chuckbergeron/etherplate](https://github.com/chuckbergeron/etherplate) that is awesome project
 
 # Setup
 
-### Requires NPM & Direnv
+### Requires NPM
 
 Homebrew on Mac OSX:
 
-`brew install node npm direnv`
+`brew install node npm`
 
 Apt on Linux:
 
-`apt-get install node npm direnv`
+`apt-get install node npm`
 
 ### Install truffle globally:
 
@@ -40,13 +32,11 @@ Apt on Linux:
 
 ### Environment Variables
 
-1. `cp .envrc.example .envrc`
+1. `cp .env.example .env`
 
 2. Enter your own twelve random words in the .envrc.
 
-3. Also, we'll leverage Infura's Ethereum Ropsten testnet node, so make sure to set up an account and paste your private key in your .envrc.
-
-4. Use `direnv allow` to export the env vars into your current terminal shell.
+3. Also, we'll leverage Infura's Ethereum Ropsten testnet node, so make sure to set up an account and paste your private key in your `.env`
 
 ### Ganache (CLI)
 
@@ -56,13 +46,13 @@ Create a directory for ganache-cli to store it's database in:
 
 ### Compile the Solidity code
 
-`truffle compile`
+`npm run truffle:compile`
 
 ### Migrate the Contracts
 
 This will deploy the contract to the network (tip: use --network=ropsten to deploy to Ethereum's Ropsten Testnet)
 
-`truffle migrate`
+`npm run truffle:migrate`
 
 # Run the Project
 
@@ -74,7 +64,7 @@ In one terminal window, run the ganache-cli (local Ethereum RPC test node) with:
 
 Once Ganache is running, in another terminal start the Webpack dev server.
 
-`npm run dev`
+`npm run start`
 
 Your server should now be running at http://127.0.0.1:8080
 
@@ -92,31 +82,6 @@ Why is there both a truffle and truffle-config file?
 
 # Running the Tests
 
-For the Solidity contract's truffle test suite:
-
-`truffle test`
-
 To run the DApp test suite (React components, etc):
 
 `npm test`
-
---------------------
-
-## Toast Messages
-
-Examples of a bunch of different looking toast messages to show on an error message, success, info, etc.:
-
-```
-  toastr.light('test', 'message', { icon: 'info', status: 'info' })
-  toastr.light('test', 'message', { icon: 'success', status: 'success' })
-  toastr.light('test', 'message', { icon: 'warning', status: 'warning' })
-
-  toastr.success('test', 'message')
-  toastr.info('test', 'message')
-  toastr.warning('test', 'message')
-  toastr.error('test', 'message')
-```
-
-#### Etherplate Wordmark
-
-The Etherplate Wordmark is set in Sign Painter: https://typekit.com/fonts/signpainter
