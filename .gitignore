@@ -1,8 +1,10 @@
 .DS_Store
 node_modules
-.envrc
+.env
 config/*.json
 .ganache
 secrets
 functions
 networks/1234.json
+build/contracts/*
+src/contracts/*
